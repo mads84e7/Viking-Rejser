@@ -1,0 +1,41 @@
+﻿<Page x:Class="Viking_Rejser.vmodel.RejserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Viking_Rejser.vmodel"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RejserPage">
+
+    <Grid>
+        <Label Content="Titel" HorizontalAlignment="Left" Margin="42,44,0,0" VerticalAlignment="Top"/>
+        <Label Content="By" HorizontalAlignment="Left" Margin="42,75,0,0" VerticalAlignment="Top"/>
+        <Label Content="Startdato" HorizontalAlignment="Left" Margin="42,106,0,0" VerticalAlignment="Top"/>
+        <Label Content="Slutdato" HorizontalAlignment="Left" Margin="42,137,0,0" VerticalAlignment="Top"/>
+        <Label Content="Pris" HorizontalAlignment="Left" Margin="42,168,0,0" VerticalAlignment="Top"/>
+        <Label Content="Max antal" HorizontalAlignment="Left" Margin="42,199,0,0" VerticalAlignment="Top"/>
+        <Label Content="Beskrivelse" HorizontalAlignment="Left" Margin="45,248,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="inputTitle" HorizontalAlignment="Left" Height="23" Margin="140,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="inputTown" HorizontalAlignment="Left" Height="23" Margin="140,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="inputStart_date" HorizontalAlignment="Left" Height="23" Margin="140,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="inputEnd_date" HorizontalAlignment="Left" Height="23" Margin="140,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="inputPrice" HorizontalAlignment="Left" Height="23" Margin="140,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="inputMax_number" HorizontalAlignment="Left" Height="23" Margin="140,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="inputDescription" HorizontalAlignment="Left" Height="103" Margin="45,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="197"/>
+        <Button Content="Opdater" HorizontalAlignment="Left" Margin="247,377,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="Opter_rejse" Content="Opter rejse" HorizontalAlignment="Left" Margin="327,377,0,0" VerticalAlignment="Top" Width="75" Click="Opter_rejse_Click"/>
+        <DataGrid x:Name="rejser_lt" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="430" Margin="407,10,0,0" VerticalAlignment="Top" Width="383" SelectionChanged="rejser_lt_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Titel" Binding="{Binding title}"/>
+                <DataGridTextColumn Header="By" Binding="{Binding town}"/>
+                <DataGridTextColumn Header="Afrejse" Binding="{Binding start_date}"/>
+                <DataGridTextColumn Header="Hjemkomst" Binding="{Binding end_date}"/>
+                <DataGridTextColumn Header="Pris" Binding="{Binding price_per_participant}"/>
+                <DataGridTextColumn Header="Antal" Binding="{Binding maxantal_of_participants}"/>
+                <DataGridTextColumn Header="Beskrivelse" Binding="{Binding description}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+</Page>
